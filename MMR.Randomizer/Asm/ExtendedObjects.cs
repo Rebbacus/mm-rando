@@ -189,6 +189,9 @@ namespace MMR.Randomizer.Asm
                 AddAllStrayFairies();
                 this.Indexes.Fairies = AdvanceIndex(5);
             }
+
+            // Change unused getItem draw entry 0x38 for use with frog model
+            ReadWriteUtils.WriteU32ToROM(0xB3C000 + 0x115E70, 0x06000000);
         }
 
         /// <summary>
