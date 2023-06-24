@@ -190,8 +190,26 @@ namespace MMR.Randomizer.Asm
                 this.Indexes.Fairies = AdvanceIndex(5);
             }
 
-            // Change unused getItem draw entry 0x38 for use with frog model
+            // Change unused getItem draw entries for use with frog model (and maybe others)
+
+            // ID 0x38, replaces null entry, yellow frog
             ReadWriteUtils.WriteU32ToROM(0xB3C000 + 0x115E70, 0x06000000);
+
+            //ID 0x47, replaces null entry, blue frog
+            ReadWriteUtils.WriteU32ToROM(0xB3C000 + 0x116088, 0x800EF054);
+            ReadWriteUtils.WriteU32ToROM(0xB3C000 + 0x11608C, 0x06000010);
+
+            // ID 0x4D, replaces null entry, red frog
+            ReadWriteUtils.WriteU32ToROM(0xB3C000 + 0x116160, 0x800EF054);
+            ReadWriteUtils.WriteU32ToROM(0xB3C000 + 0x116164, 0x06000020);
+
+            // ID 0x60, replaces unused bottled gold dust model, navy frog
+            ReadWriteUtils.WriteU32ToROM(0xB3C000 + 0x11640C, 0x800EF054);
+            ReadWriteUtils.WriteU32ToROM(0xB3C000 + 0x116410, 0x06000030);
+
+            // ID 0x61, replaces unused bottled loach model, grey frog
+            ReadWriteUtils.WriteU32ToROM(0xB3C000 + 0x116430, 0x800EF054);
+            ReadWriteUtils.WriteU32ToROM(0xB3C000 + 0x116434, 0x06000040);
         }
 
         /// <summary>
