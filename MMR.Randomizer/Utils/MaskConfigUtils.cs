@@ -59,7 +59,7 @@ namespace MMR.Randomizer.Utils
             ushort itemGet;
             int kafeimaskID;
 
-            if (newItem.ItemGained == 0xB0) //it's a trap, get what it's supposed to mimic
+            if (itemObject.Mimic != null) // Check for ice traps and bomb traps using mimics
             {
                 var itemGetMimic = itemObject.Mimic.Item;
                 if (itemGetMimic.ItemCategory() == ItemCategory.Masks)
@@ -118,7 +118,7 @@ namespace MMR.Randomizer.Utils
 
         public static void UpdateDonGeroMaskConfig(ItemObject itemObject, GetItemEntry newItem, Item item)
         {
-            if (newItem.ItemGained == 0xB0)
+            if (itemObject.Mimic != null)
             {
                 string itemMimicName = itemObject.Mimic.Item.GetAttribute<ItemNameAttribute>()?.Name;
                 if (itemMimicName == "Don Gero's Mask")
@@ -146,7 +146,7 @@ namespace MMR.Randomizer.Utils
 
         public static void UpdatePostmanHatConfig(ItemObject itemObject, GetItemEntry newItem, Item item)
         {
-            if (newItem.ItemGained == 0xB0)
+            if (itemObject.Mimic != null)
             {
                 string itemMimicName = itemObject.Mimic.Item.GetAttribute<ItemNameAttribute>()?.Name;
                 if (itemMimicName == "Postman's Hat")
@@ -174,7 +174,7 @@ namespace MMR.Randomizer.Utils
 
         public static void UpdateMaskOfTruthConfig(ItemObject itemObject, GetItemEntry newItem, Item item)
         {
-            if (newItem.ItemGained == 0xB0)
+            if (itemObject.Mimic != null)
             {
                 string itemMimicName = itemObject.Mimic.Item.GetAttribute<ItemNameAttribute>()?.Name;
                 if (itemMimicName == "Mask of Truth")
@@ -202,7 +202,7 @@ namespace MMR.Randomizer.Utils
 
         public static void UpdateGaroMaskConfig(ItemObject itemObject, GetItemEntry newItem, Item item)
         {
-            if (newItem.ItemGained == 0xB0)
+            if (itemObject.Mimic != null)
             {
                 string itemMimicName = itemObject.Mimic.Item.GetAttribute<ItemNameAttribute>()?.Name;
                 if (itemMimicName == "Garo's Mask")
@@ -230,7 +230,7 @@ namespace MMR.Randomizer.Utils
 
         public static void UpdatePendantOfMemoriesConfig(ItemObject itemObject, GetItemEntry newItem, Item item)
         {
-            if (newItem.ItemGained == 0xB0)
+            if (itemObject.Mimic != null)
             {
                 string itemMimicName = itemObject.Mimic.Item.GetAttribute<ItemNameAttribute>()?.Name;
                 if (itemMimicName == "Pendant of Memories")
